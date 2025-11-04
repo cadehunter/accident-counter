@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title></title>
+		<style>
+			body {
+				background: black;
+			}
+			.counter {
+				margin: 0;
+				position: fixed;
+				left: 50%;
+				top: 50%;
+				transform: translate(-50%, -50%);
+				font-size: 100px;
+				font-family: "Inter", sans-serif;
+				font-optical-sizing: auto;
+				font-style: normal;
+				color: white;
+			}
+			.counter.animate {
+				animation: text-update 5.1375294277s linear;
+			}
+
+			@keyframes text-update {
+				from {
+					opacity: 1;
+				}
+				to {
+					opacity: 0.5;
+				}
+			}
+		</style>
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet" />
+	</head>
+	<body>
+		<h1 class="counter animate">0</h1>
+
+		<script>
+			var counter = 0;
+			var counterElement = document.querySelector(".counter");
+			setInterval(function () {
+				counterElement.classList.remove("animate");
+				counterElement.textContent = ++counter;
+				void counterElement.offsetWidth;
+				counterElement.classList.add("animate");
+			}, 5.1375294277 * 1000);
+		</script>
+	</body>
+</html>
