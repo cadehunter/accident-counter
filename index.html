@@ -5,18 +5,24 @@
 		<style>
 			body {
 				background: black;
+				width: 100%;
+				height: 100%;
+				position: fixed;
+				display: flex;
+				justify-content: center;
+				align-items: center;
 			}
 			.counter {
 				margin: 0;
-				position: fixed;
-				left: 50%;
-				top: 50%;
-				transform: translate(-50%, -50%);
+				text-align: center;
 				font-size: 100px;
 				font-family: "Inter", sans-serif;
 				font-optical-sizing: auto;
 				font-style: normal;
 				color: white;
+				display: flex;
+				justify-content: center;
+				align-items: center;
 			}
 			.counter.animate {
 				animation: text-update 5.1375294277s linear;
@@ -47,6 +53,8 @@
 				void counterElement.offsetWidth;
 				counterElement.classList.add("animate");
 			}, 5.1375294277 * 1000);
+
+			counterElement.onclick = document.documentElement.requestFullscreen;
 		</script>
 	</body>
 </html>
